@@ -1,14 +1,14 @@
 sparsenet-win
 =============
-###Sparse Coding Simulation Software for Windows
+##Sparse Coding Simulation Software for Windows
 
-##Introduction
+###Introduction
 
 The toolbox is a warpper of [sparsenet](http://redwood.berkeley.edu/bruno/sparsenet/) for Windows, but I think it can also use for Linux without test. The original code developed by Bruno Olshausen, can be found at http://redwood.berkeley.edu/bruno/sparsenet/.
 
 ####Please feel free to contact me [tanggefu@gmail.com] if you have any questions.
 
-##Compilation
+###Compilation
 
 To run sparsenet, you will first need to compile the conjugate gradient (cgf) routine so that it may be called through matlab. If you want to test or contribute, [CMAKE](http://www.cmake.org), a cross-platform, open-source build system, is usded to build some tools for the purpose. CMake can be downloaded from [CMake' website](http://www.cmake.org/cmake/resources/software.html).
 
