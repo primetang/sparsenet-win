@@ -3,13 +3,13 @@ sparsenet-win
 Sparse Coding Simulation Software for Windows
 ---------------------------------------------
 
-###Introduction
+###1. Introduction
 
 The toolbox is a warpper of [sparsenet](http://redwood.berkeley.edu/bruno/sparsenet/) for Windows, but I think it can also use for Linux without test. The original code developed by Bruno Olshausen, can be found at http://redwood.berkeley.edu/bruno/sparsenet/.
 
 ####Please feel free to contact me [tanggefu@gmail.com] if you have any questions.
 
-###Compilation
+###2. Compilation
 
 To run sparsenet, you will first need to compile the conjugate gradient (cgf) routine so that it may be called through matlab. If you want to test or contribute, [CMAKE](http://www.cmake.org), a cross-platform, open-source build system, is usded to build some tools for the purpose. CMake can be downloaded from [CMake' website](http://www.cmake.org/cmake/resources/software.html).
 
@@ -31,7 +31,7 @@ make
 
 If successful, this should create a file named cgf.xxx in `./nrf/build/matlab/`, where xxx is a suffix that depends on what machine you are on. Then you should copy it to the main directory.
 
-###Usage
+###3. Usage
 
 At this point, you are in business. Now startup Matlab.
 
@@ -70,7 +70,7 @@ Once the simulation starts running, it will display the bases in Figure No. 1 ev
 
 The learning rate (eta) is initialized to 5.0, which is a large value. This quickly gets the solution in the right ballpark, but it is too large to come to a clean stable solution. Once it looks like you have something interesting emerging, start reducing eta, eventually to about 1.0. A full set of 8x8 bases takes about 15 min. to learn (depending on how fast your workstation is).
 
-###Notation
+###4. Notation
 
 ```
 * A         Basis functions (Phi in Nature/Vision Research. paper)
@@ -93,7 +93,7 @@ The learning rate (eta) is initialized to 5.0, which is a large value. This quic
 
 Note that in both the Vision Research and Nature papers, sigma_N^2 (noise_var) and beta are combined into a single constant, lambda (eq. 14 VR, eq. 2 Nature). The scale parameter for the coefficients does not appear in the Vision Research paper, but it does appear in the Nature paper (eqs. 4,5).
 
-###References
+###5. References
 
 ```
 Olshausen BA, Field DJ (1997). Sparse coding with an overcomplete basis set: A strategy employed by V1? Vision Research, 37, 3311-3325.
