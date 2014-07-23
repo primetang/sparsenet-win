@@ -95,7 +95,7 @@ Note that in both the Vision Research and Nature papers, sigma_N^2 (noise_var) a
 ###References
 
 ```
-Olshausen BA, Field DJ (1997). Sparse coding with an overcomplete basis set: A strategy employed by V1?  Vision Research, 37, 3311-3325. ftp://redwood.ucdavis.edu/pub/papers/VR.pdf
+Olshausen BA, Field DJ (1997). Sparse coding with an overcomplete basis set: A strategy employed by V1? Vision Research, 37, 3311-3325.
 
-Olshausen BA, Field DJ (1996). Emergence of simple-cell receptive field properties by learning a sparse code for natural images. Nature, 381, 607-609.ftp://redwood.ucdavis.edu/pub/papers/nature-paper.pdf
+Olshausen BA, Field DJ (1996). Emergence of simple-cell receptive field properties by learning a sparse code for natural images. Nature, 381, 607-609.
 ```
