@@ -1,6 +1,6 @@
 sparsenet-win
 =============
-###Sparse Coding Simulation Software for Windows
+###A Sparse Coding Simulation Software for Windows
 
 ##Introduction
 
