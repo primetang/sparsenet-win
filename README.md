@@ -39,7 +39,7 @@ First load the training data.  You can get the array IMAGES from the sparsenet w
 Once you download this array, you load into Matlab by typing:
 
 ```matlab
-load IMAGES
+>> load IMAGES
 ```
 
 This will bring in a matrix of 10 images, each 512x512 (it is a 512^2 x 10 array).  This consumes about 20 Meg, so hopefully you have enough memory.  To make your own training dataset, see the instructions in the file "make-your-own-images."
