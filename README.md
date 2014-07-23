@@ -42,7 +42,7 @@ Once you download this array, you load into Matlab by typing:
 >> load IMAGES
 ```
 
-This will bring in a matrix of 10 images, each 512x512 (it is a 512^2 x 10 array). This consumes about 20 Meg, so hopefully you have enough memory.  To make your own training dataset, see the instructions in the file `make-your-own-images`.
+This will bring in a matrix of 10 images, each 512x512 (it is a 512^2 x 10 array). This consumes about 20 M, so hopefully you have enough memory.  To make your own training dataset, see the instructions in the file `make-your-own-images`.
 
 The next step is to define a matrix of basis functions, For example, to learn 64 bases on 8x8 patches, define A as follows:
 
