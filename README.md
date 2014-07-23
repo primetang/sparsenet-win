@@ -34,7 +34,7 @@ If successful, this should create a file named cgf.xxx in "./nrf/build/matlab/",
 
 At this point, you are in business. Now startup Matlab.
 
-First load the training data.  You can get the array IMAGES from the sparsenet web page at http://redwood.ucdavis.edu/bruno/sparsenet.html.
+First load the training data.  You can get the array IMAGES from the sparsenet web page at http://redwood.berkeley.edu/bruno/sparsenet/.
 
 Once you download this array, you load into Matlab by typing:
 
