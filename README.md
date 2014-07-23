@@ -12,7 +12,7 @@ The toolbox is a warpper of [sparsenet](http://redwood.berkeley.edu/bruno/sparse
 
 To run sparsenet, you will first need to compile the conjugate gradient (cgf) routine so that it may be called through matlab. If you want to test or contribute, [CMAKE](http://www.cmake.org), a cross-platform, open-source build system, is usded to build some tools for the purpose. CMake can be downloaded from [CMake' website](http://www.cmake.org/cmake/resources/software.html).
 
-During compilation, create a new directory named "build" in the "./nrf/" directory, then choose a appropriate compiler and switch to the "build" directory, finally, execute the following command according to your machine:
+During compilation, create a new directory named "./nrf/build", then choose a appropriate compiler and switch to "./nrf/build" directory, finally, execute the following command according to your machine:
 
 * Windows
 
