@@ -1,5 +1,4 @@
-sparsenet-win
-=============
+#sparsenet-win
 ###*Sparse Coding Simulation Software for Windows*
 --------------------------------------------------
 
