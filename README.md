@@ -71,23 +71,23 @@ The learning rate(eta) is initialized to 5.0, which is a large value. This quick
 
 ###Notation
 
-```python
-* A —— Basis functions (Phi in Nature/Vision Research. paper)
-* X —— Input image (I in Nature/Vision Research paper)
-* S —— Coefficients (a in Nature/Vision Research paper)
-* noise_var —— noise variance (sigma_N^2 in Vision Research paper, eq. 6)
-* beta —— steepness of prior (beta in Vision Research paper, eq. 8)
-* sigma —— scaling parameter for prior (sigma in Nature paper)
-* eta —— learning rate (eta in Nature/Vision Research paper)
-* tol —— tolerance for conjugate gradient routine
+```
+* A         Basis functions (Phi in Nature/Vision Research. paper)
+* X         Input image (I in Nature/Vision Research paper)
+* S         Coefficients (a in Nature/Vision Research paper)
+* noise_var noise variance (sigma_N^2 in Vision Research paper, eq. 6)
+* beta      steepness of prior (beta in Vision Research paper, eq. 8)
+* sigma     scaling parameter for prior (sigma in Nature paper)
+* eta       learning rate (eta in Nature/Vision Research paper)
+* tol       tolerance for conjugate gradient routine
 ```
 
-```python
-* VAR_GOAL —— variance goal for the coefficients
-* S_var —— actual variance of the coefficients
-* var_eta —— average rate for S_var
-* alpha —— gain adaptation rate
-* gain —— L2 norm of basis functions
+```
+* VAR_GOAL  variance goal for the coefficients
+* S_var     actual variance of the coefficients
+* var_eta   average rate for S_var
+* alpha     gain adaptation rate
+* gain      L2 norm of basis functions
 ```
 
 Note that in both the Vision Research and Nature papers, sigma_N^2(noise_var) and beta are combined into a single constant, lambda(eq. 14 VR, eq. 2 Nature).  The scale parameter for the coefficients does not appear in the Vision Research paper, but it does appear in the Nature paper (eqs. 4,5).
@@ -95,6 +95,8 @@ Note that in both the Vision Research and Nature papers, sigma_N^2(noise_var) an
 
 ###References
 
-    Olshausen BA, Field DJ (1997). Sparse coding with an overcomplete basis set: A strategy employed by V1?  Vision Research, 37, 3311-3325. ftp://redwood.ucdavis.edu/pub/papers/VR.pdf
+```
+Olshausen BA, Field DJ (1997). Sparse coding with an overcomplete basis set: A strategy employed by V1?  Vision Research, 37, 3311-3325. ftp://redwood.ucdavis.edu/pub/papers/VR.pdf
 
-    Olshausen BA, Field DJ (1996). Emergence of simple-cell receptive field properties by learning a sparse code for natural images. Nature, 381, 607-609.ftp://redwood.ucdavis.edu/pub/papers/nature-paper.pdf
+Olshausen BA, Field DJ (1996). Emergence of simple-cell receptive field properties by learning a sparse code for natural images. Nature, 381, 607-609.ftp://redwood.ucdavis.edu/pub/papers/nature-paper.pdf
+```
