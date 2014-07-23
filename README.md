@@ -12,7 +12,7 @@ The toolbox is a warpper of [sparsenet](http://redwood.berkeley.edu/bruno/sparse
 
 To run sparsenet, you will first need to compile the conjugate gradient (cgf) routine so that it may be called through matlab. If you want to test or contribute, [CMAKE](http://www.cmake.org), a cross-platform, open-source build system, is usded to build some tools for the purpose. CMake can be downloaded from [CMake' website](http://www.cmake.org/cmake/resources/software.html).
 
-During compilation, create a new directory named "./nrf/build", then choose a appropriate compiler and switch to "./nrf/build" directory, finally, execute the following command according to your machine:
+During compilation, create a new directory named `./nrf/build`, then choose a appropriate compiler and switch to `./nrf/build` directory, finally, execute the following command according to your machine:
 
 * Windows
 
@@ -28,7 +28,7 @@ cmake ..
 make
 ```
 
-If successful, this should create a file named cgf.xxx in "./nrf/build/matlab/", where xxx is a suffix that depends on what machine you are on. Then you should copy it to the main directory.
+If successful, this should create a file named cgf.xxx in `./nrf/build/matlab/`, where xxx is a suffix that depends on what machine you are on. Then you should copy it to the main directory.
 
 ###Usage
 
@@ -42,7 +42,7 @@ Once you download this array, you load into Matlab by typing:
 >> load IMAGES
 ```
 
-This will bring in a matrix of 10 images, each 512x512 (it is a 512^2 x 10 array).  This consumes about 20 Meg, so hopefully you have enough memory.  To make your own training dataset, see the instructions in the file "make-your-own-images."
+This will bring in a matrix of 10 images, each 512x512 (it is a 512^2 x 10 array). This consumes about 20 Meg, so hopefully you have enough memory.  To make your own training dataset, see the instructions in the file `make-your-own-images`.
 
 The next step is to define a matrix of basis functions, For example, to learn 64 bases on 8x8 patches, define A as follows:
 
@@ -65,9 +65,9 @@ Now simply run the simulation by typing:
 >> sparsenet
 ```
 
-Once the simulation starts running, it will display the bases in Figure No. 1 every 10 batches, and it will show the variance of the coefficients in Figure No. 2.  You can stop the simulation at any point by typing control-c.  You an change the parameters in sparsenet.m and then resume execution by typing "sparsenet" again.
+Once the simulation starts running, it will display the bases in Figure No. 1 every 10 batches, and it will show the variance of the coefficients in Figure No. 2. You can stop the simulation at any point by typing control-c. You an change the parameters in `sparsenet.m` and then resume execution it again.
 
-The learning rate(eta) is initialized to 5.0, which is a large value. This quickly gets the solution in the right ballpark, but it is too large to come to a clean stable solution.  Once it looks like you have something interesting emerging, start reducing eta, eventually to about 1.0. A full set of 8x8 bases takes about 15 min. to learn(depending on how fast your workstation is).
+The learning rate (eta) is initialized to 5.0, which is a large value. This quickly gets the solution in the right ballpark, but it is too large to come to a clean stable solution. Once it looks like you have something interesting emerging, start reducing eta, eventually to about 1.0. A full set of 8x8 bases takes about 15 min. to learn (depending on how fast your workstation is).
 
 ###Notation
 
@@ -90,8 +90,7 @@ The learning rate(eta) is initialized to 5.0, which is a large value. This quick
 * gain      L2 norm of basis functions
 ```
 
-Note that in both the Vision Research and Nature papers, sigma_N^2(noise_var) and beta are combined into a single constant, lambda(eq. 14 VR, eq. 2 Nature).  The scale parameter for the coefficients does not appear in the Vision Research paper, but it does appear in the Nature paper (eqs. 4,5).
-
+Note that in both the Vision Research and Nature papers, sigma_N^2 (noise_var) and beta are combined into a single constant, lambda (eq. 14 VR, eq. 2 Nature). The scale parameter for the coefficients does not appear in the Vision Research paper, but it does appear in the Nature paper (eqs. 4,5).
 
 ###References
 
