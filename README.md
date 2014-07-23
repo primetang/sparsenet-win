@@ -1,7 +1,7 @@
 sparsenet-win
 =============
-`Sparse Coding Simulation Software for Windows`
------------------------------------------------
+Sparse Coding Simulation Software for Windows
+---------------------------------------------
 
 ###1. Introduction
 
