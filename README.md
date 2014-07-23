@@ -71,56 +71,20 @@ The learning rate(eta) is initialized to 5.0, which is a large value. This quick
 
 ###Notation
 
-* A
+* A —— Basis functions (Phi in Nature/Vision Research. paper)
+* X —— Input image (I in Nature/Vision Research paper)
+* S —— Coefficients (a in Nature/Vision Research paper)
+* noise_var —— noise variance (sigma_N^2 in Vision Research paper, eq. 6)
+* beta —— steepness of prior (beta in Vision Research paper, eq. 8)
+* sigma —— scaling parameter for prior (sigma in Nature paper)
+* eta —— learning rate (eta in Nature/Vision Research paper)
+* tol —— tolerance for conjugate gradient routine
 
-Basis functions (Phi in Nature/Vision Research. paper)
-
-* X
-
-Input image (I in Nature/Vision Research paper)
-
-* S
-
-Coefficients (a in Nature/Vision Research paper)
-
-* noise_var
-
-noise variance (sigma_N^2 in Vision Research paper, eq. 6)
-
-* beta
-
-steepness of prior (beta in Vision Research paper, eq. 8)
-
-* sigma
-
-scaling parameter for prior (sigma in Nature paper)
-
-* eta
-
-learning rate (eta in Nature/Vision Research paper)
-
-
-* tol
-
-tolerance for conjugate gradient routine
-
-
-* VAR_GOAL
-
-variance goal for the coefficients
-* S_var
-
-actual variance of the coefficients
-* var_eta
-
-average rate for S_var
-* alpha
-
-gain adaptation rate
-* gain
-
-L2 norm of basis functions
-
+* VAR_GOAL —— variance goal for the coefficients
+* S_var —— actual variance of the coefficients
+* var_eta —— average rate for S_var
+* alpha —— gain adaptation rate
+* gain —— L2 norm of basis functions
 
 Note that in both the Vision Research and Nature papers, sigma_N^2(noise_var) and beta are combined into a single constant, lambda(eq. 14 VR, eq. 2 Nature).  The scale parameter for the coefficients does not appear in the Vision Research paper, but it does appear in the Nature paper (eqs. 4,5).
 
