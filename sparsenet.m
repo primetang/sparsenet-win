@@ -3,7 +3,7 @@
 % Before running you must first define A and load IMAGES.
 % See the README file for further instructions.
 
-% load('IMAGES.mat');
+% load IMAGES;
 % A = rand(64)-0.5;
 % A = A*diag(1./sqrt(sum(A.*A)));
 
