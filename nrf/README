@@ -1,7 +1,5 @@
 
-These are the numerical recipies routines for conjugate gradient
-descent.  They have been modified to make the 1d line minimizations
-efficient.
+These are the numerical recipies routines for conjugate gradient descent.  They have been modified to make the 1d line minimizations efficient.
 
 frprmn.c:	main routine for executing conj. grad.
 linmin.c:	line minimization algorithm
