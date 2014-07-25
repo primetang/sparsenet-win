@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="sparsenet-win : Sparse Coding Simulation Software for Windows" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>sparsenet-win</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/primetang/sparsenet-win">View on GitHub</a>
+
+          <h1 id="project_title">sparsenet-win</h1>
+          <h2 id="project_tagline">Sparse Coding Simulation Software for Windows</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/primetang/sparsenet-win/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/primetang/sparsenet-win/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="1-introduction" class="anchor" href="#1-introduction"><span class="octicon octicon-link"></span></a>1. Introduction</h3>
+
+<p>The toolbox is a warpper of <a href="http://redwood.berkeley.edu/bruno/sparsenet/">sparsenet</a> for Windows, but I think it can also use for Linux without test. The original code developed by Bruno Olshausen, can be found at <a href="http://redwood.berkeley.edu/bruno/sparsenet/">http://redwood.berkeley.edu/bruno/sparsenet/</a>.</p>
+
+<p>Please feel free to contact me [<a href="mailto:tanggefu@gmail.com">tanggefu@gmail.com</a>] if you have any questions.</p>
+
+<h3>
+<a name="2-compilation" class="anchor" href="#2-compilation"><span class="octicon octicon-link"></span></a>2. Compilation</h3>
+
+<p>To run sparsenet, you will first need to compile the conjugate gradient (cgf) routine so that it may be called through matlab. If you want to test or contribute, <a href="http://www.cmake.org">CMAKE</a>, a cross-platform, open-source build system, is usded to build some tools for the purpose. CMake can be downloaded from <a href="http://www.cmake.org/cmake/resources/software.html">CMake' website</a>.</p>
+
+<p>During compilation, create a new directory named <code>./nrf/build</code>, then choose a appropriate compiler and switch to <code>./nrf/build</code> directory, finally, execute the following command according to your machine:</p>
+
+<ul>
+<li>Windows</li>
+</ul><div class="highlight highlight-cpp"><pre><span class="n">cmake</span> <span class="o">-</span><span class="n">DCMAKE_BUILD_TYPE</span><span class="o">=</span><span class="n">Release</span> <span class="p">..</span> <span class="o">-</span><span class="n">G</span><span class="s">"NMake Makefiles"</span>
+<span class="n">nmake</span>
+</pre></div>
+
+<ul>
+<li>Linux</li>
+</ul><div class="highlight highlight-cpp"><pre><span class="n">cmake</span> <span class="p">..</span>
+<span class="n">make</span>
+</pre></div>
+
+<p>If successful, this should create a file named cgf.xxx in <code>./nrf/build/matlab/</code>, where xxx is a suffix that depends on what machine you are on. Then you should copy it to the main directory.</p>
+
+<h3>
+<a name="3-usage" class="anchor" href="#3-usage"><span class="octicon octicon-link"></span></a>3. Usage</h3>
+
+<p>At this point, you are in business. Now startup Matlab.</p>
+
+<p>First load the training data.  You can get the array IMAGES from the sparsenet web page at <a href="http://redwood.berkeley.edu/bruno/sparsenet/">http://redwood.berkeley.edu/bruno/sparsenet/</a>.</p>
+
+<p>Once you download this array, you load into Matlab by typing:</p>
+
+<div class="highlight highlight-matlab"><pre><span class="o">&gt;&gt;</span> <span class="n">load</span> <span class="n">IMAGES</span>
+</pre></div>
+
+<p>This will bring in a matrix of 10 images, each 512x512 (it is a 512^2 x 10 array). This consumes about 20 M, so hopefully you have enough memory.  To make your own training dataset, see the instructions in the file <code>make-your-own-images</code>.</p>
+
+<p>The next step is to define a matrix of basis functions, For example, to learn 64 bases on 8x8 patches, define A as follows:</p>
+
+<div class="highlight highlight-matlab"><pre><span class="o">&gt;&gt;</span> <span class="n">A</span> <span class="p">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="p">;</span>
+<span class="o">&gt;&gt;</span> <span class="n">A</span> <span class="p">=</span> <span class="n">A</span><span class="o">*</span><span class="nb">diag</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="o">.*</span><span class="n">A</span><span class="p">)));</span>
+</pre></div>
+
+<p>This will create a 64x64 matrix initialized to random values. Each column is a different basis function that has unit length.</p>
+
+<p>Set the colormap of Figure 1 to greyscale:</p>
+
+<div class="highlight highlight-matlab"><pre><span class="o">&gt;&gt;</span> <span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">colormap</span><span class="p">(</span><span class="n">gray</span><span class="p">)</span>
+</pre></div>
+
+<p>Now simply run the simulation by typing:</p>
+
+<div class="highlight highlight-matlab"><pre><span class="o">&gt;&gt;</span> <span class="n">sparsenet</span>
+</pre></div>
+
+<p>Once the simulation starts running, it will display the bases in Figure No. 1 every 10 batches, and it will show the variance of the coefficients in Figure No. 2. You can stop the simulation at any point by typing control-c. You an change the parameters in <code>sparsenet.m</code> and then resume execution it again.</p>
+
+<p>The learning rate (eta) is initialized to 5.0, which is a large value. This quickly gets the solution in the right ballpark, but it is too large to come to a clean stable solution. Once it looks like you have something interesting emerging, start reducing eta, eventually to about 1.0. A full set of 8x8 bases takes about 15 min. to learn (depending on how fast your workstation is).</p>
+
+<h3>
+<a name="4-notation" class="anchor" href="#4-notation"><span class="octicon octicon-link"></span></a>4. Notation</h3>
+
+<pre><code>* A         Basis functions (Phi in Nature/Vision Research. paper)
+* X         Input image (I in Nature/Vision Research paper)
+* S         Coefficients (a in Nature/Vision Research paper)
+* noise_var noise variance (sigma_N^2 in Vision Research paper, eq. 6)
+* beta      steepness of prior (beta in Vision Research paper, eq. 8)
+* sigma     scaling parameter for prior (sigma in Nature paper)
+* eta       learning rate (eta in Nature/Vision Research paper)
+* tol       tolerance for conjugate gradient routine
+</code></pre>
+
+<pre><code>* VAR_GOAL  variance goal for the coefficients
+* S_var     actual variance of the coefficients
+* var_eta   average rate for S_var
+* alpha     gain adaptation rate
+* gain      L2 norm of basis functions
+</code></pre>
+
+<p>Note that in both the Vision Research and Nature papers, sigma_N^2 (noise_var) and beta are combined into a single constant, lambda (eq. 14 VR, eq. 2 Nature). The scale parameter for the coefficients does not appear in the Vision Research paper, but it does appear in the Nature paper (eqs. 4,5).</p>
+
+<h3>
+<a name="5-references" class="anchor" href="#5-references"><span class="octicon octicon-link"></span></a>5. References</h3>
+
+<pre><code>Olshausen BA, Field DJ (1997). Sparse coding with an overcomplete basis set: A strategy employed by V1? Vision Research, 37, 3311-3325.
+
+Olshausen BA, Field DJ (1996). Emergence of simple-cell receptive field properties by learning a sparse code for natural images. Nature, 381, 607-609.
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">sparsenet-win maintained by <a href="https://github.com/primetang">primetang</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
