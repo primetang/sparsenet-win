@@ -7,7 +7,7 @@ the variance of the pixels is the same (i.e., 1).  Then you will need
 to prewhiten the images.  For a full explanation of whitening see
 
   Olshausen BA, Field DJ (1997)  Sparse Coding with an Overcomplete
-  Basis Set: A Strategy Employed by V1?  Vision Research, 37: 3311-3325. 
+  Basis Set: A Strategy Employed by V1?  Vision Research, 37: 3311-3325.
 
 Basically, to whiten an image of size NxN, you multiply by the filter
 f*exp(-(f/f_0)^4) in the frequency domain, where f_0=0.4*N (f_0 is the
@@ -39,4 +39,3 @@ running.  The following Matlab commands should do this:
   IMAGES=sqrt(0.1)*IMAGES/sqrt(mean(var(IMAGES)));
 
   save MY_IMAGES IMAGES
-
