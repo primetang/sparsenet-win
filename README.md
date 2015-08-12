@@ -7,7 +7,7 @@ sparsenet-win
 
 The toolbox is a warpper of [sparsenet](http://redwood.berkeley.edu/bruno/sparsenet/) for Windows, but I think it can also use for Linux without test. The original code developed by Bruno Olshausen, can be found at http://redwood.berkeley.edu/bruno/sparsenet/.
 
-####Please feel free to contact me [tanggefu@qq.com] if you have any questions.
+####Please feel free to contact me [tanggefu@gmail.com] if you have any questions.
 
 ###2. Compilation
 
